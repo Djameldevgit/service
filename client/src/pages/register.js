@@ -35,11 +35,11 @@ const Register = () => {
     return (
         <div className="auth_page">
             <form onSubmit={handleSubmit}>
-                <h3 className="text-uppercase text-center mb-4">VEHICULES</h3>
+                <h3 className="text-uppercase text-center mb-4">AGENCE VOYAGE</h3>
 
               
                 <div className="form-group">
-                    <label htmlFor="username">User Name</label>
+                    <label htmlFor="username">Nom</label>
                     <input type="text" className="form-control" id="username" name="username"
                     onChange={handleChangeInput} value={username.toLowerCase().replace(/ /g, '')}
                     style={{background: `${alert.username ? '#fd2d6a14' : ''}`}} />
@@ -50,7 +50,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
+                    <label htmlFor="exampleInputEmail1">Email </label>
                     <input type="email" className="form-control" id="exampleInputEmail1" name="email"
                     onChange={handleChangeInput} value={email}
                     style={{background: `${alert.email ? '#fd2d6a14' : ''}`}} />
@@ -61,7 +61,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">Password</label>
+                    <label htmlFor="exampleInputPassword1">Mot de passe</label>
 
                     <div className="pass">
                         
@@ -71,7 +71,7 @@ const Register = () => {
                         style={{background: `${alert.password ? '#fd2d6a14' : ''}`}} />
 
                         <small onClick={() => setTypePass(!typePass)}>
-                            {typePass ? 'Hide' : 'Show'}
+                            {typePass ? 'masque' : 'voir'}
                         </small>
                     </div>
 
@@ -81,7 +81,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="cf_password">Confirm Password</label>
+                    <label htmlFor="cf_password">Confirme mot de passe</label>
 
                     <div className="pass">
                         
@@ -91,7 +91,7 @@ const Register = () => {
                         style={{background: `${alert.cf_password ? '#fd2d6a14' : ''}`}} />
 
                         <small onClick={() => setTypeCfPass(!typeCfPass)}>
-                            {typeCfPass ? 'Hide' : 'Show'}
+                            {typeCfPass ? 'maque' : 'voir'}
                         </small>
                     </div>
 
@@ -103,11 +103,11 @@ const Register = () => {
                
                 
                 <button type="submit" className="btn btn-dark w-100">
-                    Register
+                    Sinscrire
                 </button>
 
                 <p className="my-2">
-                    Already have an account? <Link to="/" style={{color: "crimson"}}>Login Now</Link>
+                    oubliez votre compte? <Link to="/" style={{color: "crimson"}}>Se conecte</Link>
                 </p>
             </form>
         </div>

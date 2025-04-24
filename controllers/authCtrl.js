@@ -9,13 +9,13 @@ const authCtrl = {
             let newUserName = username.toLowerCase().replace(/ /g, '')
 
             const user_name = await Users.findOne({username: newUserName})
-            if(user_name) return res.status(400).json({msg: "This user name already exists."})
+            if(user_name) return res.status(400).json({msg: "ce utilizateur existe deja."})
 
             const user_email = await Users.findOne({email})
-            if(user_email) return res.status(400).json({msg: "This email already exists."})
+            if(user_email) return res.status(400).json({msg: "ce email existe deja."})
 
             if(password.length < 6)
-            return res.status(400).json({msg: "Password must be at least 6 characters."})
+            return res.status(400).json({msg: "mot de passe doit avoir plus de 6 caracters."})
 
             const passwordHash = await bcrypt.hash(password, 12)
 
@@ -36,7 +36,7 @@ const authCtrl = {
             await newUser.save()
 
             res.json({
-                msg: 'Register Success!',
+                msg: 'vous ette registre avaic success!',
                 access_token,
                 user: {
                     ...newUser._doc,
@@ -69,7 +69,7 @@ const authCtrl = {
             })
 
             res.json({
-                msg: 'Login Success!',
+                msg: 'se conecte avaic Success!',
                 access_token,
                 user: {
                     ...user._doc,

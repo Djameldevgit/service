@@ -146,8 +146,7 @@ const Menu = () => {
                             </div>
                             <Link className="dropdown-item" to='/informacionaplicacion'>Info aplicacion</Link>
                             <Link className="dropdown-item" to='/message'>Chat </Link>
-                            <Link className="dropdown-item" to='/administration/roles'>Roles</Link>
-                           
+                            
                             {auth.user.role === "admin" && (
                                 <>
 
