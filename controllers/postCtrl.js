@@ -57,6 +57,7 @@ const postCtrl = {
                 specifications,
             nombredelhotel,
                 adresshotel,
+                adress,
                 totalhabitaciones,
                 tipodehabutaciones,
                 estrellas,
@@ -107,6 +108,7 @@ const postCtrl = {
                 specifications,
             nombredelhotel,
                 adresshotel,
+                adress,
                 totalhabitaciones,
                 tipodehabutaciones,
                 estrellas,
@@ -139,7 +141,7 @@ const postCtrl = {
 
             await newPost.save();
             res.json({
-                msg: 'Created Post!',
+                msg: 'Votre publication a été envoyé aux administrateurs pour approbation',
                 newPost: {
                     ...newPost._doc,
                     user: req.user
@@ -154,7 +156,7 @@ const postCtrl = {
     aprobarPostPendiente: async (req, res) => {
         try {
             const post = await Posts.findById(req.params.id);
-            if (!post) return res.status(404).json({ msg: 'Publicación no encontrada' });
+            if (!post) return res.status(404).json({ msg: 'Publicación no trouve' });
 
             post.estado = 'aprobado';
             await post.save();
@@ -277,6 +279,7 @@ const postCtrl = {
                 specifications,
             nombredelhotel,
                 adresshotel,
+                adress,
                 totalhabitaciones,
                 tipodehabutaciones,
                 estrellas,
@@ -325,6 +328,7 @@ itemsReservations_Visa,
     specifications,
 nombredelhotel,
     adresshotel,
+                adress,
     totalhabitaciones,
     tipodehabutaciones,
     estrellas,

@@ -8,28 +8,19 @@ const DescriptionPost = ({ post, readMore, setReadMore }) => {
                 {/* Encabezado */}
                 <div className="info-item">
                     <i className="fas fa-car"></i>
-                    <span className="info-label mr-2">{post.subCategory}</span>
-                    <span className="info-label mr-2">{post.title}</span>
+                    <span className="info-label mr-2">Catégorie: {post.subCategory}</span>
+
                 </div>
 
-                {/* Fechas */}
-                <div className="info-item">
-                    <i className="fas fa-calendar-alt"></i>
-                    <span className="info-label">Publié le:</span>
-                    <span className="info-value">{new Date(post.createdAt).toLocaleDateString()} à {new Date(post.createdAt).toLocaleTimeString()}</span>
-                </div>
-                <div className="info-item">
-                    <i className="fas fa-sync-alt"></i>
-                    <span className="info-label">Actualisé le:</span>
-                    <span className="info-value">{new Date(post.updatedAt).toLocaleDateString()} à {new Date(post.updatedAt).toLocaleTimeString()}</span>
-                </div>
-                {post.vistas > 0 && (
+                {post.title > 0 && (
                     <div className="info-item">
                         <i className="fas fa-eye"></i>
-                        <span className="info-label">Vue:</span>
-                        <span className="info-value">{post.vistas}</span>
+                        <span className="info-label">titre:</span>
+                        <span className="info-value">{post.title}</span>
                     </div>
                 )}
+
+
 
                 {post.description && (
                     <div className="info-item">
@@ -54,34 +45,70 @@ const DescriptionPost = ({ post, readMore, setReadMore }) => {
                         </span>
                     </div>
                 )}
-                {post.price && (
+                {post.horadudepar && (
                     <div className="info-item">
-                        <i className="fas fa-tag"></i>
-                        <span className="info-label">Prix:</span>
-                        <span className="info-value">{post.price}</span>
+                        <i className="fas fa-plane-departure"></i>
+                        <span className="info-label">Heure de départ:</span>
+                        <span className="info-value">{post.horadudepar}</span>
+                    </div>
+                )}
+                {post.datedepar && (
+                    <div className="info-item">
+                        <i className="fas fa-calendar-day"></i>
+                        <span className="info-label">Date de départ:</span>
+                        <span className="info-value">{post.datedepar}</span>
+                    </div>
+                )}
+
+
+                {/* INFORMACIÓN DE VOYAGE */}
+
+                {post.duracionviaje && (
+                    <div className="info-item">
+                        <i className="fas fa-hourglass-half"></i>
+                        <span className="info-label">Durée du voyage:</span>
+                        <span className="info-value">{post.duracionviaje}</span>
+                    </div>
+                )}
+                {post.horariollegada && (
+                    <div className="info-item">
+                        <i className="fas fa-clock"></i>
+                        <span className="info-label">Heure d'arrivée:</span>
+                        <span className="info-value">{post.horariollegada}</span>
+                    </div>
+                )}
+                {post.transporte && (
+                    <div className="info-item">
+                        <i className="fas fa-bus"></i>
+                        <span className="info-label">Transport:</span>
+                        <span className="info-value">{post.transporte}</span>
+                    </div>
+                )}
+
+
+                {post.commune && (
+                    <div className="info-item">
+                        <i className="fas fa-map-marker-alt"></i>
+                        <span className="info-label">lieu de départ:</span>
+                        <span className="info-value">{post.commune}</span>
                     </div>
                 )}
                 {post.wilaya && (
                     <div className="info-item">
-                        <i className="fas fa-map-marker-alt"></i>
-                        <span className="info-label">Wilaya:</span>
+                        <i className="fas fa-map-marker"></i>
+                        <span className="info-label">wilaya:</span>
                         <span className="info-value">{post.wilaya}</span>
                     </div>
                 )}
-                {post.commune && (
+
+                {post.destinacionhadj && (
                     <div className="info-item">
-                        <i className="fas fa-map-marker"></i>
-                        <span className="info-label">Commune:</span>
-                        <span className="info-value">{post.commune}</span>
+                        <i className="fas fa-kaaba"></i>
+                        <span className="info-label">Destination:</span>
+                        <span className="info-value">{post.destinacionhadj}</span>
                     </div>
                 )}
-                {post.contacto && (
-                    <div className="info-item">
-                        <i className="fas fa-phone"></i>
-                        <span className="info-label">Contact:</span>
-                        <span className="info-value">{post.contacto}</span>
-                    </div>
-                )}
+
 
                 {/* INFORMACIÓN DE VACACIONES */}
                 {post.itemsReservations_Visa && (
@@ -216,43 +243,7 @@ const DescriptionPost = ({ post, readMore, setReadMore }) => {
                         </span>
                     </div>
                 )}
-                {post.horariollegada && (
-                    <div className="info-item">
-                        <i className="fas fa-clock"></i>
-                        <span className="info-label">Heure d'arrivée:</span>
-                        <span className="info-value">{post.horariollegada}</span>
-                    </div>
-                )}
 
-                {/* INFORMACIÓN DE VOYAGE */}
-                {post.horadudepar && (
-                    <div className="info-item">
-                        <i className="fas fa-plane-departure"></i>
-                        <span className="info-label">Heure de départ:</span>
-                        <span className="info-value">{post.horadudepar}</span>
-                    </div>
-                )}
-                {post.datedepar && (
-                    <div className="info-item">
-                        <i className="fas fa-calendar-day"></i>
-                        <span className="info-label">Date de départ:</span>
-                        <span className="info-value">{post.datedepar}</span>
-                    </div>
-                )}
-                {post.duracionviaje && (
-                    <div className="info-item">
-                        <i className="fas fa-hourglass-half"></i>
-                        <span className="info-label">Durée du voyage:</span>
-                        <span className="info-value">{post.duracionviaje}</span>
-                    </div>
-                )}
-                {post.transporte && (
-                    <div className="info-item">
-                        <i className="fas fa-bus"></i>
-                        <span className="info-label">Transport:</span>
-                        <span className="info-value">{post.transporte}</span>
-                    </div>
-                )}
                 {post.destinacionvoyage1 && (
                     <div className="info-item">
                         <i className="fas fa-map-marked-alt"></i>
@@ -323,13 +314,39 @@ const DescriptionPost = ({ post, readMore, setReadMore }) => {
                         <span className="info-value">{post.cancelarreserva}</span>
                     </div>
                 )}
-                {post.destinacionhadj && (
+
+                {post.price && (
                     <div className="info-item">
-                        <i className="fas fa-kaaba"></i>
-                        <span className="info-label">Destination Hajj:</span>
-                        <span className="info-value">{post.destinacionhadj}</span>
+                        <i className="fas fa-tag"></i>
+                        <span className="info-label">Prix par personne:</span>
+                        <span className="info-value">{post.price} DA</span>
                     </div>
                 )}
+                {post.contacto && (
+                    <div className="info-item">
+                        <i className="fas fa-phone"></i>
+                        <span className="info-label">Contact:</span>
+                        <span className="info-value">{post.contacto}</span>
+                    </div>
+                )}
+                <div className="info-item">
+                    <i className="fas fa-calendar-alt"></i>
+                    <span className="info-label">Publié le:</span>
+                    <span className="info-value">{new Date(post.createdAt).toLocaleDateString()} à {new Date(post.createdAt).toLocaleTimeString()}</span>
+                </div>
+                <div className="info-item">
+                    <i className="fas fa-sync-alt"></i>
+                    <span className="info-label">Actualisé le:</span>
+                    <span className="info-value">{new Date(post.updatedAt).toLocaleDateString()} à {new Date(post.updatedAt).toLocaleTimeString()}</span>
+                </div>
+                {post.vistas > 0 && (
+                    <div className="info-item">
+                        <i className="fas fa-eye"></i>
+                        <span className="info-label">Vue:</span>
+                        <span className="info-value">{post.vistas}</span>
+                    </div>
+                )}
+
             </div>
         </div>
     );

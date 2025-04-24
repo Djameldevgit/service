@@ -29,7 +29,7 @@ const StatusModal = () => {
         commune: "",
         contacto: "",
 
- 
+
         itemsReservations_Visa: "",
         Location_Vacances: '',
         alquilergeneral: "",
@@ -38,7 +38,7 @@ const StatusModal = () => {
         promoteurimmobilier: false,
         specifications: [],
 
-        //title hotel
+        adress: "",
         nombredelhotel: "",
         adresshotel: "",
         totalhabitaciones: "",
@@ -70,7 +70,7 @@ const StatusModal = () => {
         cancelarreserva: "",
 
         destinacionhadj: "",
- 
+
     }
 
 
@@ -351,25 +351,22 @@ const StatusModal = () => {
             setPostData({
                 category: status.category || "",
                 subCategory: status.subCategory || "",
-
-                typosdealojamiento: status.typosdealojamiento || "",
-                itemsReservations_Visa: status.itemsReservations_Visa || "",
-                Location_Vacances: status.Location_Vacances || "",
-
-                title: status.title || "",
-                title2: status.title2 || "",
-
-                specifications: status.specifications || [],
-                wifi: status.wifi || [],
-                language: status.language || [],
-                tipodehabutaciones: status.tipodehabutaciones || [],
-
                 description: status.description || "",
+                title: status.title || "",
+                adress: status.adress || "",
                 price: status.price || "",
                 wilaya: status.wilaya || "",
                 commune: status.commune || "",
-                email: status.email || "",
-                telefono: status.telefono || "",
+                contacto: status.contacto || "",
+                alquilergeneral: status.alquilergeneral || "",
+                itemsReservations_Visa: status.itemsReservations_Visa || "",
+                Location_Vacances: status.Location_Vacances || "",
+
+
+
+
+                specifications: status.specifications || [],
+
                 numerodeapartamientos: status.numerodeapartamientos || "",
 
                 promoteurimmobilier: status.promoteurimmobilier || false,
@@ -378,36 +375,43 @@ const StatusModal = () => {
                 etage: status.etage || "",
                 piece: status.piece || "",
                 nombre: status.nombre || "",
-                adress: status.adress || "",
+
                 nombreChambres: status.nombreChambres || "",
                 tipodehabitacioness: status.tipodehabitacioness || "",
-                etoilesHotel: status.etoilesHotel || "",
+                estrellas: status.estrellas || "",
                 reservationEnLigne: status.reservationEnLigne || "",
+                wifi: status.wifi || [],
+                language: status.language || [],
+                tipodehabutaciones: status.tipodehabutaciones || [],
 
                 nightlyRate: status.nightlyRate || "",
                 hotelWebsite: status.hotelWebsite || "",
                 checkInTime: status.checkInTime || "",
+
+                horadudepar: status.horadudepar || "",
                 datedepar: status.datedepar || "",
                 duracionviaje: status.duracionviaje || "",
-                stars: status.stars || "",
-                transport: status.transport || "",
-                destination1: status.destination1 || "",
-                destination2: status.destination2 || "",
-                hotel: status.hotel || "",
-                hotel2: status.hotel2 || "",
-                nombrehotel: status.nombrehotel || "",
-                nombrehotel2: status.nombrehotel2 || "",
-                pension: status.pension || "",
-                included: status.included || "",
-                contact: status.contact || "",
-                cancellationPolicy: status.cancellationPolicy || "",
+                estrellas: status.estrellas || "",
+                transporte: status.transporte || "",
+                destinacionvoyage1: status.destinacionvoyage1 || "",
+                destinacionvoyage2: status.destinacionvoyage2 || "",
+                voyage1hotel1: status.voyage1hotel1 || "",
+                voyage1hotel2: status.voyage1hotel2 || "",
+                voyage1nombrehotel1: status.voyage1nombrehotel1 || "",
+                voyage1nombrehotel2: status.voyage1nombrehotel2 || "",
+                fecharegreso: status.fecharegreso || "",
+                serviciosdelhotel: status.serviciosdelhotel || "",
+                cancelarreserva: status.cancelarreserva || "",
+                destinacionhadj: status.destinacionhadj || "",
+
+
 
             });
             setImages(status.images || []);
             setSelectedWilaya(status.wilaya || "");
         }
     }, [status]);
-    
+
 
     const subcategoryy = () => (
         <div className="form-group">
@@ -471,7 +475,7 @@ const StatusModal = () => {
     const title = () => (
         <div className="form-group">
 
-            <input type="text" name="title" value={postData.title} onChange={handleChangeInput} placeholder="Nom" className="form-control" />
+            <input type="text" name="title" value={postData.title} onChange={handleChangeInput} placeholder="Titre" className="form-control" />
         </div>
     );
     const nombre = () => (
@@ -480,8 +484,13 @@ const StatusModal = () => {
             <input type="text" name="nombredelhotel" value={postData.nombredelhotel} onChange={handleChangeInput} placeholder="Nom" className="form-control" />
         </div>
     );
-
     const adress = () => (
+        <div className="form-group">
+
+            <input type="text" name="adress" value={postData.adress} onChange={handleChangeInput} placeholder="Adresse" className="form-control" />
+        </div>
+    );
+    const adresshotel = () => (
         <div className="form-group">
 
             <input type="text" name="adresshotel" value={postData.adresshotel} onChange={handleChangeInput} placeholder="Adresse" className="form-control" />
@@ -1029,14 +1038,12 @@ const StatusModal = () => {
                                 <div className="form-group">
                                     {title()}
                                 </div>
-                                <div className="form-group">
-                                    {destinacionhadjomra()}
-                                </div>
+
                                 <div className="form-group">
                                     {description()}
                                 </div>
                                 <div className="form-group">
-                                    {adressdudepar()}
+                                    {adress()}
                                 </div>
                                 <div className="form-group">
                                     {wilayacommune()}
@@ -1056,12 +1063,8 @@ const StatusModal = () => {
                                 <div className="form-group">
                                     {destinacionhadjomra()}
                                 </div>
-                                <div className="form-group">
-                                    {hibergementdestinacion1()}
-                                </div>
-                                <div className="form-group">
-                                    {nombrehotel()}
-                                </div>
+
+
                                 <div className="form-group"  >
                                     {datederoutour()}
                                 </div>
@@ -1101,14 +1104,12 @@ const StatusModal = () => {
                                 <div className="form-group">
                                     {title()}
                                 </div>
-                                <div className="form-group">
-                                    {destinacionhadjomra()}
-                                </div>
+                              
                                 <div className="form-group">
                                     {description()}
                                 </div>
                                 <div className="form-group">
-                                    {adressdudepar()}
+                                    {adress()}
                                 </div>
                                 <div className="form-group">
                                     {wilayacommune()}
@@ -1137,7 +1138,7 @@ const StatusModal = () => {
                                     {nombrehotelvoyage1()}
                                 </div>
 
-                                 
+
                                 <div className="form-group">
                                     {destinacionvoyage2()}
                                 </div>
@@ -1190,15 +1191,15 @@ const StatusModal = () => {
                             </div>
                             {postData.alquilergeneral === "Hotel" && (
                                 <div className='form-group'>
-                                  <div className="form-group">
-                                    {title()}
-                                </div>
-                                 
+                                    <div className="form-group">
+                                        {title()}
+                                    </div>
+
                                     <div className="form-group">
                                         {nombre()}
                                     </div>
                                     <div className="form-group"  >
-                                        {adress()}
+                                        {adresshotel()}
                                     </div>
 
                                     <div className="form-group">

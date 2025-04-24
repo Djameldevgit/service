@@ -13,6 +13,7 @@ import InformationUserPost from './home/post_card/InformationUserPost'
 import { useSelector } from 'react-redux';
  
 import CommentDate from './home/post_card/CommentDate'
+import PropertyMap from './home/post_card/PropertyMap';
 
 const PostCard = ({ post, theme }) => {
     const location = useLocation();
@@ -35,7 +36,7 @@ const PostCard = ({ post, theme }) => {
 
 
             {isPostDetailPage && <DescriptionPost post={post} />}
-
+            {isPostDetailPage && <PropertyMap post={post} />}
             
             {isAuthenticated && isPostDetailPage && (
                 <>

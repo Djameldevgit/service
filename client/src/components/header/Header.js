@@ -1,33 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Menu from './Menu'
-import Search from './Search'
-import { useTranslation } from 'react-i18next';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Menu from './Menu';
 import { useSelector } from 'react-redux';
- 
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
-    const { languageReducer } = useSelector(state => state);
-    const { t } = useTranslation();
-    return (
-        <div className="header bg-light">
-            <nav className="navbar navbar-expand-lg navbar-light 
-            bg-light justify-content-between align-middle">
+  const { languageReducer } = useSelector(state => state);
+  const { t } = useTranslation();
+  console.log(languageReducer.language)
+  return (
+    <div className="header">
+      <nav className="navbar navbar-expand-lg justify-content-between align-middle">
+        <Link to="/" className="logo">
+          <h1 className="navbar-brand text-uppercase p-0 mt-2 ml-5" onClick={() => {
+            window.scrollTo({ top: 0 }); // Desplaza la página al inicio
+          }}>
+            {t('AGENCE VOYAGE', { lng: languageReducer.language })}
+          </h1>
+          <img src='icon-web-01.png' className='imagelogo' alt="imagelogo" />
+        </Link>
 
-                <Link to="/"   className="logo">
-                      <h1 className="navbar-brand text-uppercase p-0 mt-2 ml-5" onClick={() => window.scrollTo({ top: 0 })}>
-                        {t('AGENCE VOYAGE', { lng: languageReducer.language })}
-                    </h1>
-                     <img src='djamel' className='imagelogo' alt="Logo" />
-                 
-                </Link>
+        <Menu />
+      </nav>
+    </div>
+  );
+};
 
-                <Search />
-
-                <Menu />
-            </nav>
-        </div>
-    )
-}
-
-export default Header
+export default Header;

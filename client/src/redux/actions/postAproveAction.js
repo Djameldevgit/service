@@ -117,7 +117,7 @@ export const updatePost = ({ postData, images,  auth, status }) => async (dispat
         && status.itemsReservations_Visa === postData.itemsReservations_Visa
         && status.Location_Vacances === postData.Location_Vacances
     
-        && status.title2 === postData.title2
+        && status.title === postData.title
         && status.specifications === postData.specifications
         && status.wifi === postData.wifi
         && status.language === postData.language
@@ -134,27 +134,28 @@ export const updatePost = ({ postData, images,  auth, status }) => async (dispat
         && status.piece === postData.piece
         && status.nombre === postData.nombre
         && status.adress === postData.adress
+        && status.adresshotel === postData.adresshotel
         && status.nombreChambres === postData.nombreChambres
         && status.tipodehabitacioness === postData.tipodehabitacioness
-        && status.etoilesHotel === postData.etoilesHotel
-        && status.reservationEnLigne === postData.reservationEnLigne
+           && status.reservationEnLigne === postData.reservationEnLigne
         && status.nightlyRate === postData.nightlyRate
         && status.hotelWebsite === postData.hotelWebsite
         && status.checkInTime === postData.checkInTime
         && status.datedepar === postData.datedepar
         && status.duracionviaje === postData.duracionviaje
-        && status.stars === postData.stars
-        && status.transport === postData.transport
-        && status.destination1 === postData.destination1
-        && status.destination2 === postData.destination2
-        && status.hotel === postData.hotel
-        && status.hotel2 === postData.hotel2
-        && status.nombrehotel === postData.nombrehotel
-        && status.nombrehotel2 === postData.nombrehotel2
+        && status.estrellas === postData.estrellas
+        && status.transporte === postData.transporte
+        && status.destinacionvoyage1 === postData.destinacionvoyage1
+        && status.destinacionvoyage2 === postData.destinacionvoyage2
+        && status.voyage1hotel1 === postData.voyage1hotel1
+        && status.voyage1hotel2 === postData.voyage1hotel2
+        && status.voyage1nombrehotel1 === postData.voyage1nombrehotel1
+        && status.voyage1nombrehotel2 === postData.voyage1nombrehotel2
         && status.pension === postData.pension
-        && status.included === postData.included
-        && status.contact === postData.contact
-        && status.cancellationPolicy === postData.cancellationPolicy
+        && status.incluidoenelprecio === postData.incluidoenelprecio
+        && status.contacto === postData.contacto
+        && status.cancelarreserva === postData.cancelarreserva
+        && status.destinacionhadj === postData.destinacionhadj
         
         && imgNewUrl.length === 0
         && imgOldUrl.length === status.images.length
